@@ -1,0 +1,71 @@
+
+<!Doctype html>
+
+<head>
+	<title>Delete Office Hours</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		
+	<script type="text/javascript" src="js/jquery.timepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
+
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
+
+    <script type="text/javascript" src="js/modify_time.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
+	<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+	<script type="text/javascript" src="js/jquery.datepick.js"></script>
+
+</head>
+
+<body>
+
+<?php
+	
+	include("connect.php");
+
+
+	$dow5 = "";
+
+	if(isset($_POST['fri'])){
+
+	$edit_id = $_POST['fri'];
+	$query = "select * from please Fri='$edit_id";
+	$run   = mysql_query($query);
+
+	while ($row = mysql_fetch_array($run)) {
+
+		$post_id	   = $row['id'];
+		$post_name     = $row['Name'];
+		$post_title    = $row['Title'];
+		$post_location = $row['Location'];
+		$post_semester = $row['Semester'];
+		$post_year 	   = $row['Year'];	
+		
+		$dow5			= explode(",", $row['Fri']);
+		
+	}
+
+}
+
+	$dow5[0] = "-";
+	$dow5[1] = "-";
+	$dow5[2] = "-";
+
+	$var5 = array();
+
+	foreach($dow5 as $key => $value)
+			$var5[$key] = $value; 
+
+	$var5 = implode(",", $var5);
+
+	$select="update please set Fri='$var5'";
+	$query=mysql_query($select) or die($select);
+
+	echo "<script>window.open('u1_view_post.php','_self')</script>";
+
+
+	
+
+?>																																																																																																																		

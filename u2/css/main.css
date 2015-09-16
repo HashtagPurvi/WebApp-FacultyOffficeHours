@@ -1,0 +1,54 @@
+.custom{
+	background-color: orange;
+	color: white;
+}
+
+h1{
+	color: orange;
+	text-align: left;
+	text-decoration: bold
+}
+
+h2{
+	font-size: 1.8em;
+  line-height: 1.2em;
+	text-transform: uppercase;
+  font-weight: 800;
+  -webkit-font-smoothing: antialiased;
+  color: #444;
+}
+
+#content{
+	width:1200px;
+    text-align:center;
+    padding-top: 20px;
+}
+
+#content h2{
+	padding-top: 10px;
+	color: #ffa500;
+	font-size: 2em;
+	font-weight: 600;
+	text-decoration: none;
+	font-family: Georgia, serif;
+	font-style: bold;
+}
+
+#sidebar {
+    line-height:100px;
+    background-color:#eeeeee;
+    height:800px;
+    width:300px;
+    float:left;
+    padding:5px;	      
+}
+
+#section{
+	width:550px;
+    margin-left:20px;	
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-style: bold;
+    padding-left: 10px;
+}
+
+
